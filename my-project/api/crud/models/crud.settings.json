@@ -1,0 +1,33 @@
+{
+  "kind": "collectionType",
+  "collectionName": "Crud",
+  "info": {
+    "name": "Crud",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "Name": {
+      "type": "string",
+      "unique": true,
+      "required": true
+    },
+    "Status": {
+      "type": "boolean",
+      "default": false
+    },
+    "Image": {
+      "collection": "file",
+      "via": "related",
+      "allowedTypes": [
+        "images"
+      ],
+      "plugin": "upload",
+      "required": false
+    }
+  }
+}
